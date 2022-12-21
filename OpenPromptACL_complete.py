@@ -103,7 +103,13 @@ def main():
                         default="bert-based-cased",
                         required=True,
                         help="Transformer pre-trained model selected in the list: bert-based-cased, \
-                        roberta-base")         
+                        roberta-base")      
+                        
+    parser.add_argument("--experiment",
+                        default="",
+                        type=str,
+                        required=True,
+                        help="The name of the experiment (identifier for MLFlow).")      
 
     parser.add_argument("--class1_prompt", 
                         nargs="+", 
@@ -125,6 +131,7 @@ def main():
     class0_prompt = args.class0_prompt
     output_file = args.output_file
     transformer = args.transformer
+    name_experiment = args.experiment
 
     path_dataset = "/mnt/beegfs/fmplaza/22PromptHateSpeech/datasets/" + data_file
     path_model = "/mnt/beegfs/fmplaza/22PromptHateSpeech/models/" + transformer
@@ -154,7 +161,7 @@ def main():
 
     nameRun = output_file.split("/")[-1].split(".")[0]
 
-    mlflow.set_experiment("OpenPromptAlbertDynabenchv")
+    mlflow.set_experiment(name_experiment)
 
     with mlflow.start_run(run_name=nameRun):
         mlflow.log_param("class0 prompt", label_words["0"])
