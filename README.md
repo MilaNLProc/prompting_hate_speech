@@ -10,8 +10,8 @@ For models restrictions may apply on the data (which are derived from existing d
 Installing
 ----------
 
-    !git clone https://github.com/MilaNLProc/hate-ita/
-    !cd hate-ita
+    !git clone https://github.com/MilaNLProc/prompting_hate_speech
+    !cd prompting_hate_speech
     pip install -e .
 
 **Important**: If you want to use CUDA you need to install the correct version of
@@ -24,7 +24,7 @@ Encoder models
 
     from encoder_lms import prompting_enc_hs
 
-    prompting_enc_hs.predict(["ti odio", "come si fa a rompere la lavatrice porca puttana"])
+    prompting_enc_hs.predict(["I hate this woman", "let's se if this muslim can eat pork"])
 
     >> ["hate", "not-hate"]
     
@@ -32,8 +32,7 @@ Instruction fine-tuned models
 
     from encoder_lms import prompting_inst_hs
   
-    prompting_enc_hs.predict(["ti odio", "come si fa a rompere la lavatrice porca puttana"])
-
+    prompting_enc_hs.predict(["I hate this woman", "let's se if this muslim can eat pork"])
     >> ["hate", "not-hate"]
 
 License
