@@ -24,7 +24,7 @@ Encoder models
 
     from encoder_lms import prompting_enc_hs
 
-    prompting_enc_hs.predict(["I hate this woman", "let's se if this muslim can eat pork"])
+    prompting_enc_hs.predict(["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"])
 
     >> ["hate", "not-hate"]
     
@@ -32,7 +32,7 @@ Instruction fine-tuned models
 
     from instruction_llms import prompting_inst_hs
   
-    prompting_enc_hs.predict(["I hate this woman", "let's se if this muslim can eat pork"])
+    prompting_enc_hs.predict(["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"])
     >> ["hate", "not-hate"]
 
 Input = dataframe || text || list of texts
