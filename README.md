@@ -11,6 +11,8 @@ Installing
 ----------
 
 .. code-block:: bash
+
+
     !git clone https://github.com/MilaNLProc/hate-ita/
     !cd hate-ita
     pip install -e .
