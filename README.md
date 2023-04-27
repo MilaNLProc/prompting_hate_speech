@@ -35,7 +35,7 @@ Instruction fine-tuned models
     prompting_enc_hs.predict(["I hate this woman", "let's se if this muslim can eat pork"])
     >> ["hate", "not-hate"]
 
-input = datafrem || text || list of texts
+Input = dataframe || text || list of texts
 
 Note: the instances used as examples are from a hate speech corpus. We did not create them.
 
