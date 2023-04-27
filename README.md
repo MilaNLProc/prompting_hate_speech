@@ -30,10 +30,12 @@ Encoder models
     
 Instruction fine-tuned models
 
-    from encoder_lms import prompting_inst_hs
+    from instruction_lms import prompting_inst_hs
   
     prompting_enc_hs.predict(["I hate this woman", "let's se if this muslim can eat pork"])
     >> ["hate", "not-hate"]
+   
+Note: the instances used as examples are from a hate speech corpus. We did not create them.
 
 License
 -------
