@@ -10,9 +10,6 @@ For models restrictions may apply on the data (which are derived from existing d
 Installing
 ----------
 
-.. code-block:: bash
-
-
     !git clone https://github.com/MilaNLProc/hate-ita/
     !cd hate-ita
     pip install -e .
@@ -24,9 +21,6 @@ Features
 --------
 
 Encoder models
-
-.. code-block:: python
-
 
     from encoder_lms import prompting_enc_hs
 
