@@ -1,5 +1,5 @@
 ==============================================================
-Hey Language Models, Is This Text Respectful or Toxic? Understanding Zero-Shot Learning for Hate Speech Classification
+HATE
 ==============================================================
 
 License
