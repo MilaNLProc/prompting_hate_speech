@@ -25,7 +25,7 @@ Instructions to run the code
 
 Please, follow the following instructions to run the code:
 
-### Encoder LMs
+### Encoder LMs
 
 To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
 
