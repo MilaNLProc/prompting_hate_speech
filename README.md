@@ -36,9 +36,9 @@ To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
     enc_lms = prompting("deberta-base") # Models: roberta-base, roberta-large, bert, deberta-base, deberta-large, xlm-roberta
 
     # The input can be a dataframe, a text or a list of texts
-    enc_lms.predict(["Shut your dumbass up bitch we all know you a hoe", "my lovely cat"]) 
+    enc_lms.predict(["Shut your dumbass up bitch we all know you a hoe", "My lovely cat"]) 
 
-    >> ["hate", "not-hate"]
+    >> ["hate", "non-hate"]
     
 #### Instruction fine-tuned LMs
 
@@ -54,6 +54,6 @@ To use Instruction fine-tuned LMs, you can import the `prompting` module from `i
     # The input can be a dataframe, a text or a list of texts
     inst_lms.predict(prompt_template, output_indicator, ["Shut your dumbass up bitch we all know you a hoe", "My lovely cat"]) 
 
-    >> ["hate", "not-hate"]
+    >> ["hate", "non-hate"]
 
 Note: The examples (hate) provided are sourced from a hate speech corpus and are not created by the authors of this repository.
