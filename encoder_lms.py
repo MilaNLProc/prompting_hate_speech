@@ -23,7 +23,7 @@ class prompting:
                 self.checkpoint = ("deberta-v3","microsoft/deberta-v3-base")
             elif model == "deberta-large":
                 self.checkpoint = ("deberta-v3","microsoft/deberta-v3-large")
-            elif model == "xlm":
+            elif model == "xlm-roberta":
                 self.checkpoint = ("xlm-roberta-base","xlm-roberta-base")
                 
             else:

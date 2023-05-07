@@ -23,10 +23,9 @@ the CUDA systems that matches your distribution, see `PyTorch <https://pytorch.o
 Instructions to run the code
 --------
 
-Code
---------
+## Encoder LMs
 
-Encoder LMs
+To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
 
     from encoders import prompting
 
@@ -34,25 +33,25 @@ Encoder LMs
     verb_h = "hateful" # verbalizer for hate speech class
     verb_nh = "respectful" # verbalizer for non-hate speech class
 
-    enc_p = prompting("deberta-base")
+    enc_lms = prompting("deberta-base") # Models: roberta-base, roberta-large, bert, deberta-base, deberta-large, xlm-roberta
 
-    enc_p.predict(["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"])
+    enc_lms.predict(["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"]) # The input can be a dataframe, a text or a list of texts
 
     >> ["hate", "not-hate"]
     
-Instruction fine-tuned Lms
+## Instruction fine-tuned LMs
+
+To use Instruction fine-tuned LMs, you can import the `prompting` module from `instruction_fine_tuned_lms`:
 
     from llms import prompting
 
     prompt_template = "Classify this text as hate or non-hate. Text:"
     output_indicator = "Answer:"
 
-    llms_p = prompting("flant5")
+    inst_lms = prompting("flant5") # Models: flant5, mt0
   
-    llms_p.predict(prompt_template, output_indicator, ["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"])
+    inst_lms.predict(prompt_template, output_indicator, ["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"]) # The input can be a dataframe, a text or a list of texts
 
     >> ["hate", "not-hate"]
 
-Input = dataframe || text || list of texts
-
-Note: the instances used as examples are from a hate speech corpus. We did not create them.
+Note: The examples provided are sourced from a hate speech corpus and are not created by the authors of this repository.
