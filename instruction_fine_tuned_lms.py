@@ -19,8 +19,8 @@ class prompting:
             else:
                 raise Exception("Select one of the following models: flant5 or mt0")
             
-            self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint, cache_dir="/sharedData/hf_models/")
-            self.model = AutoModelForSeq2SeqLM.from_pretrained(self.checkpoint, cache_dir="/sharedData/hf_models/", torch_dtype="auto", device_map="auto")
+            self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint)
+            self.model = AutoModelForSeq2SeqLM.from_pretrained(self.checkpoint, torch_dtype="auto", device_map="auto")
             
         def build_prompt(self, prompt_template: str, output_indicator: str, input_text: str):
             if prompt_template:

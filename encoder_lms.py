@@ -43,15 +43,24 @@ class prompting:
                 "1": verb_h,
                 "0": verb_nh
                 }
-
-            if isinstance(data, pd.DataFrame):
-                dataset = [InputExample(guid=i, text_a=txt) for i, txt in enumerate(data["text"].tolist())]
-            elif isinstance(data, str):
-                dataset = [InputExample(guid=0, text_a=data)]
+            
+            print(label_words)
+            
+            
+            if isinstance(data, str):
+                dataset = [InputExample(guid = 0,
+                                        text_a = data)]
+            elif isinstance(data, pd.DataFrame):
+                dataset = [InputExample(guid = i,
+                                        text_a = txt)
+                                        for i, txt in enumerate(data["text"])]
             elif isinstance(data, list) and all(isinstance(t, str) for t in data):
-                dataset = [InputExample(guid=0, text_a=txt) for i, txt in enumerate(data)]
+                dataset = [InputExample(guid = i,
+                                        text_a = txt)
+                                        for i, txt in enumerate(data)]
             else:
-                raise TypeError("The data parameter must be a pandas DataFrame or a string")
+                raise ValueError('Input data must be either a string or a pandas DataFrame.')
+            
 
             promptVerbalizer = ManualVerbalizer(
                 classes = classes,
@@ -83,5 +92,8 @@ class prompting:
                     logits = promptModel(batch)
                     preds = torch.argmax(logits, dim = -1)
                     predictions.extend([classes[p] for p in preds.cpu().numpy().tolist()])
-            return predictions
+
+            mapper = {"0": "non-hate", "1": "hate"}
+
+            return [mapper[k] for k in predictions]
             

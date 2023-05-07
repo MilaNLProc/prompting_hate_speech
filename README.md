@@ -1,7 +1,7 @@
 Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech
 -------
 
-This repository contains the code of the paper Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech.
+This repository contains the code of the paper **Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech**.
 
 License
 -------
@@ -23,8 +23,6 @@ the CUDA systems that matches your distribution, see `PyTorch <https://pytorch.o
 Instructions to run the code
 --------
 
-Please, follow the following instructions to run the code:
-
 #### Encoder LMs
 
 To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
@@ -32,13 +30,13 @@ To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
     from encoder_lms import prompting
 
     prompt_template = "This text is"
-    verb_h = "hateful" # verbalizer for hate speech class
+    verb_h = "toxic" # verbalizer for hate speech class
     verb_nh = "respectful" # verbalizer for non-hate speech class
 
     enc_lms = prompting("deberta-base") # Models: roberta-base, roberta-large, bert, deberta-base, deberta-large, xlm-roberta
 
     # The input can be a dataframe, a text or a list of texts
-    enc_lms.predict(["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"]) 
+    enc_lms.predict(["Shut your dumbass up bitch we all know you a hoe", "my lovely cat"]) 
 
     >> ["hate", "not-hate"]
     
@@ -54,8 +52,8 @@ To use Instruction fine-tuned LMs, you can import the `prompting` module from `i
     inst_lms = prompting("flant5") # Models: flant5, mt0
     
     # The input can be a dataframe, a text or a list of texts
-    inst_lms.predict(prompt_template, output_indicator, ["Shut your dumbass up bitch we all know you a hoe", "we don't need more RAPEFUGEES!"]) 
+    inst_lms.predict(prompt_template, output_indicator, ["Shut your dumbass up bitch we all know you a hoe", "My lovely cat"]) 
 
     >> ["hate", "not-hate"]
 
-Note: The examples provided are sourced from a hate speech corpus and are not created by the authors of this repository.
+Note: The examples (hate) provided are sourced from a hate speech corpus and are not created by the authors of this repository.
