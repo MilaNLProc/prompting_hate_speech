@@ -55,7 +55,3 @@ Instruction fine-tuned models
 Input = dataframe || text || list of texts
 
 Note: the instances used as examples are from a hate speech corpus. We did not create them.
-
-License
--------
-`GNU GPLv3 <https://choosealicense.com/licenses/gpl-3.0/>`_
