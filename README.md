@@ -1,4 +1,5 @@
-# Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech
+Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech
+-------
 
 This repository contains the code of the paper Respectful or Toxic? Using Zero-Shot Learning with Language Models to Detect Hate Speech.
 
@@ -22,10 +23,10 @@ the CUDA systems that matches your distribution, see `PyTorch <https://pytorch.o
 Instructions to run the code
 --------
 
-Features
+Code
 --------
 
-Encoder models
+Encoder LMs
 
     from encoders import prompting
 
@@ -39,7 +40,7 @@ Encoder models
 
     >> ["hate", "not-hate"]
     
-Instruction fine-tuned models
+Instruction fine-tuned Lms
 
     from llms import prompting
 
