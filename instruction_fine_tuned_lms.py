@@ -1,5 +1,4 @@
 import pandas as pd
-from typing import List
 import torch
 from datasets import Dataset
 from tqdm import tqdm
@@ -10,11 +9,11 @@ from transformers import (
     DataCollatorWithPadding,
 )
 
-class instruction_LLMS:
+class prompting:
 
         def __init__(self, model="flant5"):
             if model == "flant5":
-                self.checkpoint = "google/flan-t5-small"
+                self.checkpoint = "google/flan-t5-xl"
             elif model == "mt0":
                 self.checkpoint = "bigscience/mt0-xxl"
             else:
@@ -29,17 +28,6 @@ class instruction_LLMS:
             else:
                 raise NotImplementedError("Insert a template")
             return prompt
-
-        '''  
-        def predict_text(self, prompt_template: str, output_indicator: str, text: str):
-            with torch.no_grad():
-                text = self.build_prompt(prompt_template, output_indicator, text)
-                inputs = self.tokenizer(text, return_tensors="pt")
-                outputs = self.model.generate(**inputs)
-                decoded = self.tokenizer.decode(outputs[0].tolist(), skip_special_tokens=True)
-
-            return decoded
-        '''
 
         def predict(self, prompt_template: str, output_indicator: str, data):
             with torch.no_grad():

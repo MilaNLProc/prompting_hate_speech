@@ -1,0 +1,5 @@
+pandas
+transformers
+torch
+datasets 
+openprompt>=1.0.1

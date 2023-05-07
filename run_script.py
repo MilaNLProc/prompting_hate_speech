@@ -1,8 +1,8 @@
-from prompting_hate_speech.instruction_llms import instruction_LLMS
-from prompting_hate_speech.encoder_lms import encoder_LLMS
+from prompting_hate_speech.llms import prompting_enc_hs
+from prompting_hate_speech.encoders import prompting_inst_hs
 import pandas as pd
 
-hc = instruction_LLMS("flant5")
+hc = instruction_llms("flant5")
 
 prompt_template = "Classify this text as hate or non-hate. Text:"
 output_indicator = "Answer:"
@@ -16,7 +16,7 @@ df['text'] = texts
 
 # Encoder-based models with prompting
 
-enc_p = encoder_LLMS("deberta-base")
+enc_p = encoder_lms("deberta-base")
 prompt_template = "This text is"
 verb_h = "hateful"
 verb_nh = "love"

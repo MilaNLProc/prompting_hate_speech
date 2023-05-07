@@ -1,8 +1,8 @@
 import pandas as pd
-from typing import List
+#from typing import List
 import torch
-from datasets import Dataset
-from tqdm import tqdm
+#from datasets import Dataset
+#from tqdm import tqdm
 
 from openprompt.plms import load_plm
 from openprompt.prompts import ManualTemplate
@@ -11,7 +11,7 @@ from openprompt.prompts import ManualVerbalizer
 from openprompt import PromptForClassification
 from openprompt import PromptDataLoader
 
-class encoder_LLMS:
+class prompting:
         def __init__(self, model="roberta-base"):
             if model == "roberta-base":
                 self.checkpoint = ("roberta","roberta-base")
@@ -48,8 +48,8 @@ class encoder_LLMS:
                 dataset = [InputExample(guid=i, text_a=txt) for i, txt in enumerate(data["text"].tolist())]
             elif isinstance(data, str):
                 dataset = [InputExample(guid=0, text_a=data)]
-            #elif isinstance(data, list) and all(isinstance(t, str) for t in data):
-            #    dataset = [InputExample(guid=0, text_a=txt) for i, txt in enumerate(data)]
+            elif isinstance(data, list) and all(isinstance(t, str) for t in data):
+                dataset = [InputExample(guid=0, text_a=txt) for i, txt in enumerate(data)]
             else:
                 raise TypeError("The data parameter must be a pandas DataFrame or a string")
 
