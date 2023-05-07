@@ -25,7 +25,7 @@ Instructions to run the code
 
 Please, follow the following instructions to run the code:
 
-### Encoder LMs
+#### Encoder LMs
 
 To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
 
@@ -42,7 +42,7 @@ To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
 
     >> ["hate", "not-hate"]
     
-### Instruction fine-tuned LMs
+#### Instruction fine-tuned LMs
 
 To use Instruction fine-tuned LMs, you can import the `prompting` module from `instruction_fine_tuned_lms`:
 
