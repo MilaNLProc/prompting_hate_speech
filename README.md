@@ -10,6 +10,8 @@ Code comes from HuggingFace and thus our License is an MIT license.
 
 For models restrictions may apply on the data (which are derived from existing datasets) or Twitter (main data source). We refer users to the original licenses accompanying each dataset and Twitter regulations.
 
+<!---
+
 Installing
 ----------
 
@@ -19,6 +21,8 @@ Installing
 
 **Important**: If you want to use CUDA you need to install the correct version of
 the CUDA systems that matches your distribution, see `PyTorch <https://pytorch.org/get-started/locally/>`__.
+
+-->
 
 Instructions to run the code
 --------
