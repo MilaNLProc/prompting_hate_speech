@@ -40,7 +40,7 @@ To use Encoder LMs, you can import the `prompting` module from `encoder_lms`:
     enc_lms = prompting("deberta-base") # Models: roberta-base, roberta-large, bert, deberta-base, deberta-large, xlm-roberta
 
     # The input can be a dataframe, a text or a list of texts
-    enc_lms.predict(["Shut your dumbass up bitch we all know you a hoe", "My lovely cat"]) 
+    enc_lms.predict(prompt_template, verb_h, verb_nh, ["Shut your dumbass up bitch we all know you a hoe", "My lovely cat"]) 
 
     >> ["hate", "non-hate"]
     
