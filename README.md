@@ -6,9 +6,9 @@ This repository contains the code of the paper **Respectful or Toxic? Using Zero
 Authors
 -------
 
-`Flor Miriam Plaza-del-Arco <https://federicobianchi.io/>`_ •
-`Debora Nozza <https://deboranozza.com/)>`_ •
-`Dirk Hovy <https://faculty.unibocconi.eu/dirkhovy/>`_
+[Flor Miriam Plaza-del-Arco](http://fmplaza.github.io/) •
+[Debora Nozza](http://dnozza.github.io/) •
+[Dirk Hovy](https://faculty.unibocconi.eu/dirkhovy/) •
 
 License
 -------
